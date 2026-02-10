@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 12:03:22 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/02/07 19:08:16 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/02/10 11:26:04 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,41 +27,37 @@
 // $>./a.out " ---+--+1234ab567"
 // -1234
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-    int sign;
-    int result;
+	int	sign;
+	int	result;
 
-    sign = 1;
-    result = 0;
-
-    while (*str == ' ' || (*str >= 9 && *str <= 13))
-    {
-        str++;
-    }
-
-    while (*str == '+' || *str == '-')
-    {
-        if (*str == '-')
-        {
-            sign *= -1;
-        }
-        str++;
-    }
-
-    while (*str >= '0' && *str <= '9')
-    {
-        result = result * 10 + (*str - '0');
-        str++;
-    }
-
-    return (result * sign);
+	sign = 1;
+	result = 0;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+	{
+		str++;
+	}
+	while (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+		{
+			sign *= -1;
+		}
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		result = result * 10 + (*str - '0');
+		str++;
+	}
+	return (result * sign);
 }
 
-int man ()
-{
-    printf("%c", ft_atoi(" ---+--+1234ab567"));
-    return (0);
-}
+// int main ()
+// {
+//     printf("%i", ft_atoi(" ---+--+1234ab567"));
+//     return (0);
+// }

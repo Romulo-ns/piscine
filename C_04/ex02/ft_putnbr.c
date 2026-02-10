@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 11:01:35 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/02/08 16:15:48 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/02/10 11:13:01 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@
 void	ft_putnbr(int nb)
 {
 	char	c;
+	c = 0;
 
 	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		return;
+		return ;
 	}
 	if (nb < 0)
 	{
@@ -36,13 +37,17 @@ void	ft_putnbr(int nb)
 	if (nb >= 10)
 	{
 		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
-	c = (nb % 10) + '0';
+	else
+	{
+		c = nb + '0';
+	}
 	write(1, &c, 1);
 }
 
 int main ()
 {
-    ft_putnbr(42);
+    ft_putnbr(-42895);
     return(0);
 }
