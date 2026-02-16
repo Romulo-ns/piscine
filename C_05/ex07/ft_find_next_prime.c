@@ -1,33 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 19:49:15 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/02/11 23:49:03 by romdo-na         ###   ########.fr       */
+/*   Created: 2026/02/11 11:31:06 by romdo-na          #+#    #+#             */
+/*   Updated: 2026/02/11 23:51:34 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// • Escreva uma função recursiva que retorne o fatorial do número
-// passado como parâmetro.
-// • Se o argumento não for válido, a função deve retornar 0.
-// • Não deve gerir o "int overflow", o retorno da função será indefinido.
+// • Escreva uma função que retorne o número primo imediatamente superior ou
+// igual ao número passado como parâmetro.
 
 // #include <stdio.h>
 
-int	ft_recursive_factorial(int nb)
+int	ft_is_prime(int nb)
 {
-	if (nb == 0)
-		return (1);
-	if (nb < 0)
+	int	i;
+
+	if (nb <= 1)
 		return (0);
-	return (nb *= ft_recursive_factorial(nb - 1));
+	i = 2;
+	while (i * i <= nb)
+	{
+		if (nb % i == 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	if (ft_is_prime(nb))
+	{
+		return (nb);
+	}
+	else
+	{
+		return (ft_find_next_prime(nb + 1));
+	}
+	return (0);
 }
 
 // int main ()
 // {
-//     printf("%d", ft_recursive_factorial(5));
-//     return(0);
+//     printf("next prime = %d", ft_find_next_prime(-14));
 // }

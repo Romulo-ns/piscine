@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   put16.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/06 11:01:35 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/02/11 20:35:22 by romdo-na         ###   ########.fr       */
+/*   Created: 2026/02/16 10:02:19 by romdo-na          #+#    #+#             */
+/*   Updated: 2026/02/16 12:35:54 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,35 +19,23 @@
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+char putnumber (int nb)
 {
-	char	c;
+    long int l_nb;
 
-	c = 0;
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		c = nb + '0';
-		write(1, &c, 1);
-	}
+    l_nb = nb;
+    if (l_nb < 0)
+    {
+        l_nb *= -1;
+        write(1 , "-", 1);
+    }
+    if (l_nb >= 10)
+        putnumber(l_nb / 10);
+    write(1, &"0123456789"[l_nb % 10], 1);
+    return (0);
 }
 
-// int main ()
-// {
-//     ft_putnbr(-42895);
-//     return(0);
-// }
+int main ()
+{
+    putnumber(-646);
+}

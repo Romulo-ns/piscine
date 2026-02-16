@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 13:51:37 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/02/10 15:25:03 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/02/11 23:50:28 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@
 // • Evidentemente, ft_fibonacci deverá ser recursiva.
 // • Se index for inferior a 0, a função retornará -1.
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int ft_fibonacci(int index)
+int	ft_fibonacci(int index)
 {
-    if (index < 0)
-        return (-1);
-    if (index == 0)
-        return (0);
-    if (index == 1)
-        return (1);
-    return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	if (index < 0)
+		return (-1);
+	if (index == 0)
+		return (0);
+	if (index == 1)
+		return (1);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
 
-int main ()
-{
-    printf("fibonacci = %s", ft_fibonacci(5));
-}
+// int main ()
+// {
+//     printf("fibonacci = %s", ft_fibonacci(5));
+// }

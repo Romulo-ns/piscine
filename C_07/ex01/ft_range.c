@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/06 10:36:36 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/02/11 20:31:02 by romdo-na         ###   ########.fr       */
+/*   Created: 2026/02/12 12:21:43 by romdo-na          #+#    #+#             */
+/*   Updated: 2026/02/16 18:37:19 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// • Escreve uma função que conte e retorne o numero de caracteres numa string.
+// • Escreva uma função ft_range que retorna um array de int. Este array de int
+// deverá conter todos os valores entre min e max.
+// • Min incluído - max excluído.
 
-// #include <stdio.h>
-
-int	ft_strlen(char *str)
+int *ft_range(int min, int max)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+    
 }
-
-// int main ()
-// {
-// 	printf("%d", ft_strlen("asd"));
-// }
